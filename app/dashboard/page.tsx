@@ -25,7 +25,7 @@ export default async function DashboardPage() {
     .eq('id', user.id)
     .single()
 
-  const baseCurrency = profile?.base_currency || 'USD'
+  const baseCurrency = profile?.base_currency || 'THB'
 
   // Get transactions for current month
   const { data: transactions } = await supabase

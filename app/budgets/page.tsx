@@ -65,7 +65,7 @@ export default async function BudgetsPage() {
         </div>
         <AddBudgetButton
           categories={categories || []}
-          baseCurrency={profile?.base_currency || 'USD'}
+          baseCurrency={profile?.base_currency || 'THB'}
           currentMonth={now.getMonth() + 1}
           currentYear={now.getFullYear()}
         />

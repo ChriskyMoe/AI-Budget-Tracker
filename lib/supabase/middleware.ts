@@ -12,10 +12,11 @@ export async function updateSession(request: NextRequest) {
     console.error('NEXT_PUBLIC_SUPABASE_URL=your_supabase_url')
     console.error('NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key')
     
-    // Allow access to login/register pages even without env vars
+    // Allow access to login/register/auth pages even without env vars
     if (
       request.nextUrl.pathname.startsWith('/login') ||
       request.nextUrl.pathname.startsWith('/register') ||
+      request.nextUrl.pathname.startsWith('/auth/callback') ||
       request.nextUrl.pathname === '/'
     ) {
       return NextResponse.next()
@@ -64,6 +65,7 @@ export async function updateSession(request: NextRequest) {
     !user &&
     !request.nextUrl.pathname.startsWith('/login') &&
     !request.nextUrl.pathname.startsWith('/register') &&
+    !request.nextUrl.pathname.startsWith('/auth/callback') &&
     request.nextUrl.pathname !== '/'
   ) {
     // no user, potentially respond by redirecting the user to the login page

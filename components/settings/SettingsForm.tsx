@@ -25,7 +25,7 @@ export function SettingsForm({ profile }: SettingsFormProps) {
   const [success, setSuccess] = useState('')
 
   const [formData, setFormData] = useState({
-    base_currency: profile?.base_currency || 'USD',
+    base_currency: profile?.base_currency || 'THB',
   })
 
   useEffect(() => {
@@ -92,6 +92,7 @@ export function SettingsForm({ profile }: SettingsFormProps) {
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           >
+            <option value="THB">THB - Thai Baht</option>
             <option value="USD">USD - US Dollar</option>
             <option value="EUR">EUR - Euro</option>
             <option value="GBP">GBP - British Pound</option>

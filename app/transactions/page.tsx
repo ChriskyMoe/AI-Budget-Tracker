@@ -49,7 +49,7 @@ export default async function TransactionsPage() {
         </div>
         <AddTransactionButton
           categories={categories || []}
-          baseCurrency={profile?.base_currency || 'USD'}
+          baseCurrency={profile?.base_currency || 'THB'}
         />
       </div>
 
