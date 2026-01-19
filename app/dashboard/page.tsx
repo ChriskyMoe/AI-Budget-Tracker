@@ -6,6 +6,7 @@ import { ExpenseBreakdown } from '@/components/dashboard/ExpenseBreakdown'
 import { TimelineView } from '@/components/dashboard/TimelineView'
 import { startOfMonth, endOfMonth, format } from 'date-fns'
 
+
 export default async function DashboardPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
