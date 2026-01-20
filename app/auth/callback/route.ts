@@ -1,4 +1,4 @@
-adimport { createServerClient } from '@supabase/ssr'
+import { createServerClient } from '@supabase/ssr'
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
